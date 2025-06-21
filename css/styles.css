@@ -63,6 +63,104 @@ body {
   outline: 0 !important;
 }
 
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text, .hero-image {
+    max-width: 100%;
+  }
+
+  .hero-image img {
+    max-width: 90%;
+  }
+}
+
+
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3vw; /* sempitkan jarak antar kiri dan kanan */
+  min-height: 100vh;
+  background: linear-gradient(to right, #141e30, #243b55);
+  border-bottom: 16px solid white;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
+  max-width: 100%;
+  gap: 4vw;
+}
+
+.hero-text {
+  flex: 0 0 45%;
+  color: #ffffff;
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #f9c938;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  max-width: 450px;
+}
+
+.hero-text .btn-yellow {
+  background-color: #f9c938;
+  border: none;
+  color: #000;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 5px;
+}
+
+.hero-image {
+  flex: 0 0 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.hero-image img {
+  width: 600%;
+  max-width: 1000px; /* bisa ditambah jika masih kurang besar */
+  height: auto;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* jarak antara avatar dan button */
+  margin-top: 1.5rem;
+}
+
+.hero-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+
 hr {
   box-sizing: content-box;
   height: 0;
@@ -474,9 +572,17 @@ mark,
   background-color: #fff;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
 }
+
+.portfolio-thumb {
+  width: 70%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
 
 .figure {
   display: inline-block;
@@ -578,6 +684,13 @@ pre code {
 .no-gutters > [class*=col-] {
   padding-right: 0;
   padding-left: 0;
+}
+
+.skill-img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .col-xl,
@@ -9977,11 +10090,12 @@ p {
 
 .page-section {
   padding: 6rem 0;
+  margin-bottom: 1rem;
 }
 .page-section h2.section-heading {
   font-size: 2.5rem;
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 .page-section h3.section-subheading {
   font-size: 1rem;
@@ -10038,7 +10152,7 @@ img::-moz-selection {
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #212529;
+  background: linear-gradient(to right, #141e30, #243b55) !important;
 }
 #mainNav .navbar-toggler {
   padding: 0.75rem;
@@ -10148,6 +10262,27 @@ header.masthead .masthead-heading {
     margin-bottom: 4rem;
   }
 }
+
+#services {
+  background-color: #f5efe6;
+  color: black;
+}
+
+#portfolio {
+  background-color: #f5efe6;
+  color: black;
+}
+
+#about {
+  background-color: #f5efe6;
+  color: black;
+}
+
+#favorites {
+  background-color: #f5efe6;
+  color: black;
+}
+
 #portfolio .portfolio-item {
   max-width: 25rem;
   margin-left: auto;
@@ -10289,7 +10424,7 @@ header.masthead .masthead-heading {
   color: white;
   border: 7px solid #e9ecef;
   border-radius: 100%;
-  background-color: #fed136;
+  background-color: #ffffff !important;
 }
 .timeline > li .timeline-image h4 {
   font-size: 10px;
@@ -10399,6 +10534,14 @@ header.masthead .masthead-heading {
     padding: 0 100px 20px 20px;
   }
 }
+
+.icon-gradient {
+  background: linear-gradient(to right, #141e30, #243b55);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 .team-member {
   margin-bottom: 3rem;
   text-align: center;
@@ -10414,13 +10557,12 @@ header.masthead .masthead-heading {
 }
 
 section#contact {
-  background-color: #212529;
-  background-image: url("../assets/img/map-image.png");
+  background-color: #F0F0F0;
   background-repeat: no-repeat;
   background-position: center;
 }
 section#contact .section-heading {
-  color: #fff;
+  color: black;
 }
 section#contact form#contactForm .form-group {
   margin-bottom: 1.5rem;
@@ -10466,6 +10608,89 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-weight: 700;
   color: #ced4da;
 }
+
+.contact-modern {
+  background-image: url("../assets/img/contact-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  padding: 4rem 2rem;
+}
+
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.contact-illustration img {
+  width: 300px;
+  max-width: 100%;
+}
+
+.contact-form-box {
+  background-color: #1a2a47;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form-box h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.contact-form-box p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #e0e0e0;
+}
+
+.contact-form-box input,
+.contact-form-box textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+.contact-form-box textarea {
+  resize: vertical;
+  height: 120px;
+}
+
+.contact-form-box .btn-yellow {
+  background-color: #f9c938;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 6px;
+  width: 100%;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form-box .btn-yellow:hover {
+  background-color: #e0b72d;
+}
+
+
 
 .footer {
   text-align: center;

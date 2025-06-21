@@ -51,4 +51,20 @@
     navbarCollapse();
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
+
+    // Expandable project thumbnails
+    document.querySelectorAll('.project-thumbnail').forEach(img => {
+        img.addEventListener('click', () => {
+            const target = document.querySelector(img.dataset.target);
+
+            // Close others
+            document.querySelectorAll('.project-detail').forEach(detail => {
+                if (detail !== target) detail.style.display = 'none';
+            });
+
+            // Toggle current
+            target.style.display = (target.style.display === 'block') ? 'none' : 'block';
+        });
+    });
+
 })(jQuery); // End of use strict
