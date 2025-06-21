@@ -37,6 +37,108 @@
   box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem; /* Tambahkan padding vertikal dan horizontal */
+        min-height: auto; /* Izinkan tinggi menyesuaikan konten di mobile */
+        gap: 2rem; /* Tambahkan jarak antar elemen dalam column flex */
+    }
+
+    .hero-text {
+        max-width: 100%; /* Pastikan teks mengambil lebar penuh */
+        padding: 0 1rem; /* Sesuaikan padding agar tidak terlalu mepet */
+        margin-bottom: 2rem;
+        flex: none; /* Hapus flex-basis agar bisa mengambil 100% */
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem; /* Sesuaikan ukuran font untuk mobile */
+    }
+
+    .hero-text h2 {
+        font-size: 1.5rem; /* Sesuaikan ukuran font untuk mobile */
+    }
+
+    .hero-image {
+        display: none;
+    }
+
+    .hero-image img {
+        max-width: 90%; /* Berikan sedikit ruang di tepi */
+        width: auto; /* Izinkan gambar mengecil sesuai konten */
+        height: auto;
+        display: none;
+    }
+
+    .hero-avatar {
+        width: 80px; /* Kecilkan ukuran avatar di mobile */
+        height: 80px;
+    }
+
+    /* Skills Section - Gambar */
+    .skill-img {
+        width: 100%; /* Gambar skill harus mengisi lebar kolomnya */
+        max-width: 250px; /* Batasi agar tidak terlalu besar di tengah */
+        height: auto; /* Biarkan tinggi menyesuaikan */
+        margin-left: auto; /* Pusatkan gambar */
+        margin-right: auto; /* Pusatkan gambar */
+        display: block; /* Pastikan menjadi block untuk margin auto */
+    }
+
+    /* Portfolio Section - Gambar */
+    .portfolio-thumb {
+        width: 90%; /* Agar gambar proyek tidak terlalu kecil */
+        height: auto; /* Biarkan tinggi menyesuaikan agar tidak terdistorsi */
+        max-height: 200px; /* Batasi tinggi maksimum jika diperlukan */
+        object-fit: contain; /* Gunakan 'contain' agar gambar tidak terpotong, atau 'cover' jika ingin mengisi ruang */
+    }
+
+    /* Academic/About Section - Timeline */
+    .timeline > li,
+    .timeline > li.timeline-inverted {
+        flex-direction: column !important; /* Pastikan ini tetap column */
+        text-align: center;
+        padding: 0 1rem; /* Tambahkan padding agar tidak terlalu mepet tepi */
+    }
+
+    .timeline > li .timeline-panel,
+    .timeline > li.timeline-inverted .timeline-panel {
+        width: 100%;
+        padding: 1rem 0; /* Sesuaikan padding agar konten timeline tidak terlalu sempit */
+    }
+
+    .timeline-image {
+        margin: 0 auto 1.5rem; /* Pusatkan dan beri jarak bawah */
+        width: 100px; /* Kecilkan sedikit jika 120px terlalu besar */
+        height: 100px;
+    }
+
+    /* Contact Section */
+    .contact-container {
+        flex-direction: column;
+        padding: 2rem 1rem;
+    }
+
+    .contact-illustration img {
+        width: 80%; /* Biarkan lebih fleksibel */
+        max-width: 250px; /* Batasi maksimum */
+        height: auto;
+        margin: 0 auto 1.5rem; /* Pusatkan dan beri jarak bawah */
+        display: block;
+    }
+     .contact-illustration {
+        display: none; /* Sembunyikan elemen contact-illustration di layar <= 768px */
+    }
+
+    .contact-form-box {
+        width: 100%; /* Pastikan form box mengambil lebar penuh */
+        padding: 0 1rem; /* Sesuaikan padding form */
+    }
+}
+
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -100,9 +202,10 @@ body {
 }
 
 .hero-text {
-  flex: 0 0 45%;
+  flex: 0 0 50%;
   color: #ffffff;
   max-width: 600px;
+  padding-right: 2vw;
 }
 
 .hero-text h1 {
@@ -119,7 +222,6 @@ body {
 .hero-text p {
   font-size: 1.25rem;
   margin-top: 1rem;
-  max-width: 450px;
 }
 
 .hero-text .btn-yellow {
@@ -137,6 +239,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding-left: 2vw;
 }
 
 .hero-image img {
